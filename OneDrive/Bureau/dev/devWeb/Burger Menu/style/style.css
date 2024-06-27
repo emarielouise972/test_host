@@ -1,0 +1,65 @@
+*{
+    padding:0;
+    margin: 0;
+    font-family: 'Segoe UI';
+}
+
+li {
+    list-style: none;
+}
+a,
+a:visited{
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+a:hover {
+    color: white;
+}
+nav {
+    background-color:skyblue;
+    display: flex; /*mettre les éléments à coté*/
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: calc(0.5rem+1.5vw);/*fait en sorte que la taille de l'ecriture s'adapte en fonction de la taille de la page*/
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+#icons{
+    cursor: pointer;
+    display: none;
+}
+@media (max-width: 650px){
+    #icons{
+        display: block;
+    }
+    #icons:before {
+        content: "\2630";
+    }
+    .active #icons:before{
+        content: "\2715";
+    }
+    nav ul{
+        position: fixed;
+        left: -100%;
+        top: 5%;
+        flex-direction: column;
+        background-color: skyblue;
+        width: 100%;
+        text-align: center;
+        transition: 0.25s;
+    }
+    nav li{
+        padding: 1px 0;
+    }
+    nav li:hover {
+        background: rgb(11, 112, 151);
+    }
+    nav.active ul {
+        left:0;
+    }
+}
